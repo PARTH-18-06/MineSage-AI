@@ -1,0 +1,151 @@
+{
+  "dataset": "CMPDI/CIL SIH demo dataset",
+  "version": "2026-09-14",
+  "methodology": "Expected values are manually curated from the fictional demo documents. Evaluation reads processed chunk text, extracts values with deterministic regex parsers, normalizes units, and compares every expected field. Accuracy is matched_fields / total_expected_fields * 100.",
+  "expectations": [
+    {
+      "field": "seam_ii_depth_min_m",
+      "expected_value": 186,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the first depth in 'Seam II occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_ii_depth_max_m",
+      "expected_value": 214,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the second depth in 'Seam II occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_ii_avg_thickness_m",
+      "expected_value": 3.2,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract average seam thickness from the Seam II observation sentence."
+    },
+    {
+      "field": "seam_iii_depth_min_m",
+      "expected_value": 286,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the first depth in 'Seam III occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_iii_depth_max_m",
+      "expected_value": 342,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the second depth in 'Seam III occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_iii_avg_thickness_m",
+      "expected_value": 5.6,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract average seam thickness from the Seam III observation sentence."
+    },
+    {
+      "field": "seam_iv_depth_min_m",
+      "expected_value": 372,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the first depth in 'Seam IV occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_iv_depth_max_m",
+      "expected_value": 418,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract the second depth in 'Seam IV occurs between <min> meters and <max> meters'."
+    },
+    {
+      "field": "seam_iv_avg_thickness_m",
+      "expected_value": 2.4,
+      "unit": "m",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract average seam thickness from the Seam IV observation sentence."
+    },
+    {
+      "field": "inferred_geological_reserve_total_mt",
+      "expected_value": 48.6,
+      "unit": "MT",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract total inferred geological reserve from the reserve estimate paragraph."
+    },
+    {
+      "field": "mineable_reserve_mt",
+      "expected_value": 39.8,
+      "unit": "MT",
+      "source_filename": "geological_summary_block_a.txt",
+      "source_document_id": 18,
+      "rule": "Extract mineable reserve from the reserve estimate paragraph."
+    },
+    {
+      "field": "august_2026_production_target_mt",
+      "expected_value": 1.28,
+      "unit": "MT",
+      "source_filename": "monthly_production_report_aug_2026.txt",
+      "source_document_id": 19,
+      "rule": "Extract August 2026 coal production target from the production target section."
+    },
+    {
+      "field": "august_2026_actual_production_mt",
+      "expected_value": 1.16,
+      "unit": "MT",
+      "source_filename": "monthly_production_report_aug_2026.txt",
+      "source_document_id": 19,
+      "rule": "Extract actual coal production from the actual production section."
+    },
+    {
+      "field": "august_2026_shortfall_mt",
+      "expected_value": 0.12,
+      "unit": "MT",
+      "source_filename": "monthly_production_report_aug_2026.txt",
+      "source_document_id": 19,
+      "rule": "Extract the shortfall value from the actual production section."
+    },
+    {
+      "field": "borehole_bh_a04_inferred_reserve_mt",
+      "expected_value": 9.4,
+      "unit": "MT",
+      "source_filename": "borehole_reserve_table.xlsx",
+      "source_document_id": 26,
+      "rule": "Extract inferred reserve from the BH-A04 row."
+    },
+    {
+      "field": "borehole_bh_a01_inferred_reserve_mt",
+      "expected_value": 8.7,
+      "unit": "MT",
+      "source_filename": "borehole_reserve_table.xlsx",
+      "source_document_id": 26,
+      "rule": "Extract inferred reserve from the BH-A01 row."
+    },
+    {
+      "field": "sump_s2_pumping_capacity_cum_per_hour",
+      "expected_value": 1400,
+      "unit": "cubic_meters_per_hour",
+      "source_filename": "safety_environment_note.docx",
+      "source_document_id": 22,
+      "rule": "Extract Sump S-2 pumping capacity from the mine water management sentence."
+    },
+    {
+      "field": "dust_suppression_compliance",
+      "expected_value": "OK",
+      "unit": "status",
+      "source_filename": "scanned_ocr_notice.png",
+      "source_document_id": 25,
+      "rule": "Extract dust suppression compliance status from the OCR notice."
+    }
+  ]
+}

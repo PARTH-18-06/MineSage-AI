@@ -1,0 +1,24 @@
+High Priority Parliamentary Question Response - Fictional Demo
+
+Question:
+Whether CMPDI/CIL has reviewed the production, reserve, safety, and environmental status of Suryagarh Opencast Expansion, Block A North during 2026; if so, the details thereof.
+
+Concise answer:
+Yes. A technical review was completed on 28 August 2026 for the fictional Suryagarh Opencast Expansion under Central Coalfields Limited. The reviewed area contains an inferred geological reserve of 48.6 MT and a mineable reserve estimate of 39.8 MT. August 2026 production was 1.16 MT against a target of 1.28 MT.
+
+Data sources:
+The response is based on borehole logs BH-A01, BH-A04, BH-A07, and BH-A09; the August 2026 monthly production report; the mine safety inspection note dated 24 August 2026; and the environmental compliance register.
+
+Subsidiary name:
+Central Coalfields Limited, fictional demonstration subsidiary record.
+
+Safety and environment note:
+No fatal accident was reported during the review period. Dust suppression was strengthened near haul road HR-3, mine water pumping was increased at sump S-2, and garland drain cleaning was completed before the September 2026 monsoon review.
+
+Figures and dates:
+Inspection date: 24 August 2026.
+Review date: 28 August 2026.
+Production target: 1.28 MT for August 2026.
+Actual production: 1.16 MT for August 2026.
+Inferred reserve: 48.6 MT.
+Depth range reviewed: 186 meters to 418 meters.

@@ -1,0 +1,167 @@
+{
+  "dataset": "CMPDI/CIL SIH demo workflow benchmark",
+  "version": "2026-09-14",
+  "benchmark_run_id": "226110a7-d81f-4e89-8dab-42bbff0a36fa",
+  "benchmark_type": "temporary_controlled_benchmark",
+  "measurement_type": "measured_real_wall_clock_interval",
+  "integrity_status": "validated",
+  "reason": "Report id=11 was created during earlier interactive work and does not provide a continuous traceable interval from first upload to saved report.",
+  "benchmark_start_utc": "2026-09-14T10:52:47.415486Z",
+  "benchmark_end_utc": "2026-09-14T10:52:55.73168Z",
+  "temporary_document_ids": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+  ],
+  "temporary_job_ids": [
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+  ],
+  "temporary_report_id": 16,
+  "source_files": [
+    "geological_summary_block_a.txt",
+    "monthly_production_report_aug_2026.txt",
+    "parliamentary_question_response.txt",
+    "safety_environment_note.docx",
+    "legacy_archive_note.pdf",
+    "scanned_ocr_notice.png",
+    "borehole_reserve_table.xlsx",
+    "dispatch_summary.csv"
+  ],
+  "upload_audit_events": [
+    {
+      "job_id": 55,
+      "document_id": 55,
+      "created_at_utc": "2026-09-14T10:52:47.716237Z"
+    },
+    {
+      "job_id": 56,
+      "document_id": 56,
+      "created_at_utc": "2026-09-14T10:52:47.792649Z"
+    },
+    {
+      "job_id": 57,
+      "document_id": 57,
+      "created_at_utc": "2026-09-14T10:52:47.875434Z"
+    },
+    {
+      "job_id": 58,
+      "document_id": 58,
+      "created_at_utc": "2026-09-14T10:52:47.968124Z"
+    },
+    {
+      "job_id": 59,
+      "document_id": 59,
+      "created_at_utc": "2026-09-14T10:52:48.460628Z"
+    },
+    {
+      "job_id": 60,
+      "document_id": 60,
+      "created_at_utc": "2026-09-14T10:52:48.548805Z"
+    },
+    {
+      "job_id": 61,
+      "document_id": 61,
+      "created_at_utc": "2026-09-14T10:52:48.657787Z"
+    },
+    {
+      "job_id": 62,
+      "document_id": 62,
+      "created_at_utc": "2026-09-14T10:52:48.737387Z"
+    }
+  ],
+  "report_created_at_utc": "2026-09-14T10:52:55.337205Z",
+  "report_audit_events": [
+    {
+      "report_id": 16,
+      "created_at_utc": "2026-09-14T10:52:55.337205Z"
+    }
+  ],
+  "compute_events": [
+    {
+      "event": "document_ingestion_job",
+      "job_id": 55,
+      "document_id": 55,
+      "started_at_utc": "2026-09-14T10:52:47.764915Z",
+      "finished_at_utc": "2026-09-14T10:52:47.790657Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:47.770531Z",
+      "duration_seconds": 0.026
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 56,
+      "document_id": 56,
+      "started_at_utc": "2026-09-14T10:52:47.836926Z",
+      "finished_at_utc": "2026-09-14T10:52:47.883097Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:47.843466Z",
+      "duration_seconds": 0.046
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 57,
+      "document_id": 57,
+      "started_at_utc": "2026-09-14T10:52:47.947427Z",
+      "finished_at_utc": "2026-09-14T10:52:48.017276Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:47.962742Z",
+      "duration_seconds": 0.07
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 58,
+      "document_id": 58,
+      "started_at_utc": "2026-09-14T10:52:48.346028Z",
+      "finished_at_utc": "2026-09-14T10:52:48.483202Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:48.394092Z",
+      "duration_seconds": 0.137
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 59,
+      "document_id": 59,
+      "started_at_utc": "2026-09-14T10:52:48.571552Z",
+      "finished_at_utc": "2026-09-14T10:52:48.627147Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:48.583196Z",
+      "duration_seconds": 0.056
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 60,
+      "document_id": 60,
+      "started_at_utc": "2026-09-14T10:52:48.627147Z",
+      "finished_at_utc": "2026-09-14T10:52:52.158725Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:48.640161Z",
+      "duration_seconds": 3.532
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 61,
+      "document_id": 61,
+      "started_at_utc": "2026-09-14T10:52:48.74979Z",
+      "finished_at_utc": "2026-09-14T10:52:49.789679Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:48.764752Z",
+      "duration_seconds": 1.04
+    },
+    {
+      "event": "document_ingestion_job",
+      "job_id": 62,
+      "document_id": 62,
+      "started_at_utc": "2026-09-14T10:52:48.805676Z",
+      "finished_at_utc": "2026-09-14T10:52:48.954603Z",
+      "ingestion_completed_audit_at_utc": "2026-09-14T10:52:48.82127Z",
+      "duration_seconds": 0.149
+    }
+  ],
+  "aggregate_compute_available": false,
+  "aggregate_compute_unavailable_reason": "unavailable due to timestamp inconsistency"
+}

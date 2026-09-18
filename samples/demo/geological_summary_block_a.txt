@@ -1,0 +1,22 @@
+CMPDI/CIL Geological Summary - Suryagarh Block A
+
+Mine/block name: Suryagarh Opencast Expansion, Block A North, fictional CMPDI planning case.
+Subsidiary: Central Coalfields Limited demonstration dataset.
+Survey period: April 2026 to August 2026.
+
+Coal seam observations:
+- Seam II occurs between 186 meters and 214 meters depth with average seam thickness of 3.2 meters.
+- Seam III occurs between 286 meters and 342 meters depth with average seam thickness of 5.6 meters.
+- Seam IV occurs between 372 meters and 418 meters depth with average seam thickness of 2.4 meters.
+
+Borehole references:
+- Borehole BH-A01 intersected Seam III at 304 meters with 5.8 meters thickness and dull banded coal.
+- Borehole BH-A04 intersected Seam III at 318 meters with 6.1 meters thickness and minor shale parting.
+- Borehole BH-A07 intersected Seam II at 198 meters with 3.4 meters thickness and moderate roof sandstone.
+- Borehole BH-A09 intersected Seam IV at 391 meters with 2.5 meters thickness and low ash continuity.
+
+Geological observations:
+The block shows gentle easterly dip, stable seam continuity across the northern panel, and localized sandstone washout near the western boundary. Fault throw is estimated at 7 meters near section line N-14. Roof conditions are competent in Seam III but require closer monitoring in the shallow Seam II gallery.
+
+Reserve estimate:
+The fictional inferred geological reserve for Suryagarh Block A North is 48.6 MT, including 31.4 MT in Seam III, 11.2 MT in Seam II, and 6.0 MT in Seam IV. The mineable reserve is estimated at 39.8 MT after excluding safety barriers and highwall constraints.

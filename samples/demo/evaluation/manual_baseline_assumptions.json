@@ -1,0 +1,113 @@
+{
+  "dataset": "CMPDI/CIL SIH demo workflow metrics",
+  "version": "2026-09-14",
+  "manual_baseline": {
+    "manual_baseline_time_seconds": 7440,
+    "manual_baseline_time_minutes": 124,
+    "measurement_type": "documented_assumption_not_measured",
+    "rationale": "Team-estimated baseline for an analyst preparing one consolidated geological/production intelligence report from eight mixed-format documents. The estimate assumes manual document location, reading, figure extraction, reconciliation, drafting, citation attachment, formatting, and review for a demo-scale CMPDI/CIL reporting workflow.",
+    "disclosure": "The manual baseline is a documented estimate, not a measured comparison against an actual manual process.",
+    "activities": [
+      {
+        "activity": "Locate and organize source documents",
+        "assumption": "2 minutes per document for 8 documents",
+        "documents": 8,
+        "seconds": 960
+      },
+      {
+        "activity": "Read documents and extract relevant mining figures",
+        "assumption": "6 minutes per document for 8 documents",
+        "documents": 8,
+        "seconds": 2880
+      },
+      {
+        "activity": "Reconcile figures across geological, production, spreadsheet, OCR, and parliamentary sources",
+        "assumption": "15 minutes for cross-source validation",
+        "seconds": 900
+      },
+      {
+        "activity": "Compile report narrative and executive summary",
+        "assumption": "20 minutes for first-pass report drafting",
+        "seconds": 1200
+      },
+      {
+        "activity": "Attach source references and citations",
+        "assumption": "10 minutes for source attribution",
+        "seconds": 600
+      },
+      {
+        "activity": "Format, review, and prepare final response",
+        "assumption": "15 minutes for final formatting and quality review",
+        "seconds": 900
+      }
+    ]
+  },
+  "automation_workflow_steps": [
+    {
+      "step": "document_intake",
+      "description": "User uploads source documents through the API or UI.",
+      "requires_manual_intervention": true,
+      "current_system_basis": "A human still chooses and uploads files."
+    },
+    {
+      "step": "object_storage",
+      "description": "Uploaded files are stored in MinIO with metadata recorded in PostgreSQL.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented automatically by POST /documents/upload."
+    },
+    {
+      "step": "text_extraction_ocr",
+      "description": "TXT, PDF, DOCX, XLSX, CSV, and image OCR extraction run in Celery.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented in the ingestion worker."
+    },
+    {
+      "step": "chunking",
+      "description": "Extracted text is split into chunks with source references.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented by the ingestion pipeline."
+    },
+    {
+      "step": "embedding",
+      "description": "Chunks are embedded for semantic retrieval.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented by the embedding Celery task."
+    },
+    {
+      "step": "semantic_retrieval",
+      "description": "Relevant chunks are retrieved for Q&A and search.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented through pgvector-backed retrieval."
+    },
+    {
+      "step": "figure_extraction",
+      "description": "Key figures are extracted for analytics and report support.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented through deterministic text parsing and report heuristics."
+    },
+    {
+      "step": "narrative_generation",
+      "description": "Report narrative is generated from processed chunk text.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented by POST /reports/generate."
+    },
+    {
+      "step": "citation_attachment",
+      "description": "Q&A and reports expose source documents or chunk citations.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented in Q&A citations and report source document sections."
+    },
+    {
+      "step": "report_storage",
+      "description": "Generated report metadata and content are persisted.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented by the reports table."
+    },
+    {
+      "step": "data_quality_validation",
+      "description": "Structured extraction accuracy and validation rules are computed.",
+      "requires_manual_intervention": false,
+      "current_system_basis": "Implemented by GET /analytics/data-quality."
+    }
+  ]
+}
