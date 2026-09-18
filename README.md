@@ -115,9 +115,8 @@ Supported extraction inputs:
 ### Upload Examples
 
 ```powershell
-curl.exe -s -F "file=@samples/day2-sample.txt" http://localhost:8000/documents/upload
-curl.exe -s -F "file=@samples/day2-sample.pdf" http://localhost:8000/documents/upload
-curl.exe -s -F "file=@samples/day2-unsupported.bin" http://localhost:8000/documents/upload
+curl.exe -s -F "file=@samples/demo/geological_summary_block_a.txt" http://localhost:8000/documents/upload
+curl.exe -s -F "file=@samples/demo/legacy_archive_note.pdf" http://localhost:8000/documents/upload
 ```
 
 ### Day 2 Verification Commands
@@ -131,9 +130,8 @@ curl.exe -s http://localhost:8000/health/db
 curl.exe -s http://localhost:8000/health/redis
 curl.exe -s http://localhost:8000/health/minio
 
-curl.exe -s -F "file=@samples/day2-sample.txt" http://localhost:8000/documents/upload
-curl.exe -s -F "file=@samples/day2-sample.pdf" http://localhost:8000/documents/upload
-curl.exe -s -F "file=@samples/day2-unsupported.bin" http://localhost:8000/documents/upload
+curl.exe -s -F "file=@samples/demo/geological_summary_block_a.txt" http://localhost:8000/documents/upload
+curl.exe -s -F "file=@samples/demo/legacy_archive_note.pdf" http://localhost:8000/documents/upload
 
 docker compose exec api python -c "import os, boto3; from botocore.config import Config; s3 = boto3.client('s3', endpoint_url=os.environ['MINIO_ENDPOINT'], aws_access_key_id=os.environ['MINIO_ROOT_USER'], aws_secret_access_key=os.environ['MINIO_ROOT_PASSWORD'], config=Config(s3={'addressing_style': 'path'})); print(s3.list_objects_v2(Bucket=os.environ['MINIO_BUCKET'], Prefix='documents/'))"
 
@@ -187,7 +185,7 @@ $viewerToken = $viewerLogin.access_token
 ```powershell
 curl.exe -s http://localhost:8000/auth/me -H "Authorization: Bearer $adminToken"
 curl.exe -s http://localhost:8000/documents -H "Authorization: Bearer $viewerToken"
-curl.exe -s -F "file=@samples/day2-sample.txt" http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken"
+curl.exe -s -F "file=@samples/demo/geological_summary_block_a.txt" http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken"
 curl.exe -s http://localhost:8000/jobs/1 -H "Authorization: Bearer $adminToken"
 ```
 
@@ -195,7 +193,7 @@ curl.exe -s http://localhost:8000/jobs/1 -H "Authorization: Bearer $adminToken"
 
 ```powershell
 curl.exe -i -s http://localhost:8000/documents
-curl.exe -i -s -F "file=@samples/day2-sample.txt" http://localhost:8000/documents/upload -H "Authorization: Bearer $viewerToken"
+curl.exe -i -s -F "file=@samples/demo/geological_summary_block_a.txt" http://localhost:8000/documents/upload -H "Authorization: Bearer $viewerToken"
 curl.exe -i -s http://localhost:8000/jobs/1 -H "Authorization: Bearer $viewerToken"
 ```
 
@@ -268,7 +266,7 @@ Upload a new document as analyst and confirm automatic embedding:
 ```powershell
 $analystLogin = curl.exe -s -X POST http://localhost:8000/auth/login -H "Content-Type: application/json" -d "{\"email\":\"analyst@cmpdi.local\",\"password\":\"<password-from-secure-config>\"}" | ConvertFrom-Json
 $analystToken = $analystLogin.access_token
-$upload = curl.exe -s -X POST http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken" -F "file=@samples/day2-sample.txt" | ConvertFrom-Json
+$upload = curl.exe -s -X POST http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken" -F "file=@samples/demo/geological_summary_block_a.txt" | ConvertFrom-Json
 curl.exe -s http://localhost:8000/jobs/$($upload.job_id) -H "Authorization: Bearer $analystToken"
 curl.exe -s http://localhost:8000/documents/$($upload.document_id)/chunks -H "Authorization: Bearer $viewerToken"
 docker compose exec postgres psql -U cmpdi -d cmpdi_reports -c "SELECT document_id, COUNT(*) AS chunks, COUNT(embedding) AS chunks_with_embeddings FROM chunks WHERE document_id = $($upload.document_id) GROUP BY document_id;"
@@ -573,7 +571,7 @@ viewer@cmpdi.local / <password-from-secure-config>
 
 1. Login as `analyst@cmpdi.local`.
 2. Open Dashboard and confirm analytics counts and charts load.
-3. Open Documents, upload `samples/day2-sample.txt`, and poll the job status.
+3. Open Documents, upload `samples/demo/geological_summary_block_a.txt`, and poll the job status.
 4. Open a document and confirm chunks plus embedding status are shown.
 5. Ask the Q&A question: `What production target or coal seam information is available?`
 6. Run semantic search for `coal seam reserve`.
@@ -603,7 +601,7 @@ $viewerToken = $viewerLogin.access_token
 curl.exe -s http://localhost:8000/auth/me -H "Authorization: Bearer $analystToken"
 curl.exe -s http://localhost:8000/analytics/summary -H "Authorization: Bearer $viewerToken"
 curl.exe -s http://localhost:8000/documents -H "Authorization: Bearer $viewerToken"
-curl.exe -s -X POST http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken" -F "file=@samples/day2-sample.txt"
+curl.exe -s -X POST http://localhost:8000/documents/upload -H "Authorization: Bearer $analystToken" -F "file=@samples/demo/geological_summary_block_a.txt"
 curl.exe -s "http://localhost:8000/search/semantic?q=coal%20seam%20reserve&limit=3" -H "Authorization: Bearer $viewerToken"
 curl.exe -s -X POST http://localhost:8000/qa/ask -H "Authorization: Bearer $viewerToken" -H "Content-Type: application/json" -d "{\"question\":\"What production target or coal seam information is available?\",\"limit\":3}"
 curl.exe -s http://localhost:8000/reports -H "Authorization: Bearer $viewerToken"

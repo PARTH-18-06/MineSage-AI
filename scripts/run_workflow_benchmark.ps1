@@ -62,11 +62,16 @@ function Cleanup-TemporaryData {
   }
 }
 
+$adminPassword = $env:DEFAULT_ADMIN_PASSWORD
+if ([string]::IsNullOrWhiteSpace($adminPassword)) {
+  throw "DEFAULT_ADMIN_PASSWORD must be supplied through the process environment."
+}
+
 try {
   Write-Output "===== WORKFLOW BENCHMARK LOGIN ====="
   $login = Invoke-RestMethod -Method Post -Uri "$apiBase/auth/login" -ContentType "application/json" -Body (@{
     email = "admin@cmpdi.local"
-    password = "AdminPass123!"
+    password = $adminPassword
   } | ConvertTo-Json)
   $headers = @{ Authorization = "Bearer $($login.access_token)" }
   Write-Output "benchmark_run_id=$benchmarkRunId"

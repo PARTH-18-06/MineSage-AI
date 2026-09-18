@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     jwt_access_token_expire_minutes: int = 120
     default_admin_email: str = "admin@cmpdi.local"
-    default_admin_password: str = "AdminPass123!"
+    default_admin_password: str = "replace-with-a-strong-local-password"
     default_admin_full_name: str = "CMPDI Demo Admin"
     embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_dimension: int = 384
