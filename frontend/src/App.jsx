@@ -139,8 +139,8 @@ function App() {
 }
 
 function LoginScreen({ api, onLogin }) {
-  const [email, setEmail] = useState("analyst@cmpdi.local");
-  const [password, setPassword] = useState("AnalystPass123!");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
