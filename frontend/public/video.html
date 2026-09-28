@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MineSage-AI Explainer Video</title>
+    <meta
+      name="description"
+      content="MineSage-AI product explainer video for the CMPDI/CIL AI Reporting Platform."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f3f7f8;
+        color: #0f172a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+      }
+
+      main {
+        width: min(1120px, 100%);
+      }
+
+      .header {
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        margin: 0 0 6px;
+        color: #0f766e;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1.08;
+      }
+
+      p {
+        margin: 10px 0 0;
+        max-width: 760px;
+        color: #475569;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .player {
+        overflow: hidden;
+        border: 1px solid #d5e1e5;
+        border-radius: 10px;
+        background: #0f172a;
+        box-shadow: 0 20px 50px rgb(15 23 42 / 18%);
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #0f172a;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      a {
+        color: #0f766e;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <p class="eyebrow">Binary Brains</p>
+        <h1>MineSage-AI Explainer Video</h1>
+        <p>
+          AI-powered geological, mining, and reporting platform for CMPDI/CIL-style
+          document intelligence workflows.
+        </p>
+      </div>
+
+      <section class="player" aria-label="MineSage-AI explainer video player">
+        <video controls preload="metadata" poster="">
+          <source
+            src="/media/mine-sage-ai-explainer-captioned.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <div class="links">
+        <a href="/media/mine-sage-ai-explainer-captioned.mp4">Open video file</a>
+        <a href="/">Open MineSage-AI platform</a>
+      </div>
+    </main>
+  </body>
+</html>
